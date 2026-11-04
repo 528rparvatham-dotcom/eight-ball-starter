@@ -7,8 +7,8 @@ function askEightBall() {
 
 
 // Get input values
-  let userName = document.getElementbyId('nameInput').value;
-  let userQuestion = document.getElementbyId('questionInput').value;
+  let userName = document.getElementById('nameInput').value;
+  let userQuestion = document.getElementById('questionInput').value;
   console.log(userName, userQuestion);
 
 // Show the Question on site
