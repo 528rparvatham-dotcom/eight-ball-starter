@@ -11,7 +11,7 @@ function askEightBall() {
   let userQuestion = document.getElementbyId('questionInput').value;
   console.log(userName, userQuestion);
 
-// Show theb Question on site
+// Show the Question on site
 document.getElementById('QuestionOut').textContent = "You asked: " + userQuestion;
 
 //Greet the user!
@@ -23,8 +23,22 @@ if(userName === ""){
   greeting = `Hello, $(userName)!`
 }
 
+document.getElementById('greeting').textContent = greeting
 
+// check the question
 
+if (userQuestion === "") {
+  document.getElementById('questionOut').textContent = ''
+document.getElementById('answer').textContent ='The 8 ball needs a question!'
+document.getElementById('AnswerType'.innerHTML) = ''
+return
+}
+
+//get a random number
+
+//Get the Magic 8balls answer
+
+//Show the 8ball answer type badge
 
 
 
