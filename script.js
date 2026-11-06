@@ -3,88 +3,88 @@
   Name:
   Period:
 */
+
 function askEightBall() {
+  // Get input values
+  let userName = document.getElementById('nameInput').value.trim();
+  let userQuestion = document.getElementById('questionInput').value.trim();
 
+  // Elements
+  let greetingEl = document.getElementById('greeting');
+  let questionOutEl = document.getElementById('questionOut');
+  let answerEl = document.getElementById('answer');
+  let answerTypeEl = document.getElementById('answerType'); // Matched ID casing
 
-// Get input values
-  let userName = document.getElementById('nameInput').value;
-  let userQuestion = document.getElementById('questionInput').value;
-  console.log(userName, userQuestion);
+  // Greet the user
+  if (userName === "") {
+    greetingEl.textContent = "Hello, Mystery Person!";
+  } else {
+    greetingEl.textContent = `Hello, ${userName}!`;
+  }
 
-// Show the Question on site
-document.getElementById('questionOut').textContent = "You asked: " + userQuestion;
+  // Check if a question was entered
+  if (userQuestion === "") {
+    questionOutEl.textContent = "";
+    answerEl.textContent = "?";
+    answerTypeEl.innerHTML = '<span class="badge bg-warning text-dark">Please enter a question!</span>';
+    return;
+  }
 
-//Greet the user!
-let greeting
+  // Display user question
+  questionOutEl.textContent = `You asked: "${userQuestion}"`;
 
-if(userName === ""){
-  greeting = "Hello Mystery Person!"
-} else {
-  greeting = `Hello, ${userName}!`
-}
+  // Get a random number from 0 to 7
+  let randomNumber = Math.floor(Math.random() * 8);
 
-document.getElementById('greeting').textContent = greeting
+  let eightBall = '';
+  let badgeClass = '';
+  let typeLabel = '';
 
-// check the question
-
-if (userQuestion === "") {
-  document.getElementById('questionOut').textContent = ''
-document.getElementById('answer').textContent ='The 8 ball needs a question!'
-document.getElementById('AnswerType').innerHTML = ''
-return
-}
-
-//get a random number
-let randomNumber = Math.floor(Math.random() * 8);
-//Get the Magic 8balls answer
-switch (randomNumber) {
+  // Get response and type based on random number
+  switch (randomNumber) {
     case 0:
       eightBall = 'It is certain';
-      answerType = 'positive';
+      typeLabel = 'Positive';
+      badgeClass = 'bg-success';
       break;
     case 1:
       eightBall = 'It is decidedly so';
-      answerType = 'positive';
+      typeLabel = 'Positive';
+      badgeClass = 'bg-success';
       break;
     case 2:
-      eightBall = 'Reply hazy try again';
-      answerType = 'neutral';
+      eightBall = 'Signs point to yes';
+      typeLabel = 'Positive';
+      badgeClass = 'bg-success';
       break;
     case 3:
-      eightBall = 'Cannot predict now';
-      answerType = 'neutral';
+      eightBall = 'Reply hazy, try again';
+      typeLabel = 'Neutral';
+      badgeClass = 'bg-secondary';
       break;
     case 4:
-      eightBall = 'Do not count on it';
-      answerType = 'negative';
+      eightBall = 'Ask again later';
+      typeLabel = 'Neutral';
+      badgeClass = 'bg-secondary';
       break;
     case 5:
-      eightBall = 'My sources say no';
-      answerType = 'negative';
+      eightBall = 'Better not tell you now';
+      typeLabel = 'Neutral';
+      badgeClass = 'bg-secondary';
       break;
     case 6:
-      eightBall = 'Outlook good';
-      answerType = 'positive';
+      eightBall = 'Don\'t count on it';
+      typeLabel = 'Negative';
+      badgeClass = 'bg-danger';
       break;
     case 7:
-      eightBall = 'Signs point to yes';
-      answerType = 'positive';
+      eightBall = 'My sources say no';
+      typeLabel = 'Negative';
+      badgeClass = 'bg-danger';
       break;
   }
 
-  // Display the 8-ball answer
-  document.getElementById('answer').textContent = eightBall;
-
-  // Show the 8-ball answer type badge
-  document.getElementById('AnswerType').textContent = `Type: ${answerType}`;
-}
-//Show the 8ball answer type badge
-let eightBall = '';
-  let answerType = '';
-
-
-
-
-
-
+  // Display the 8-Ball answer and styled Bootstrap badge
+  answerEl.textContent = eightBall;
+  answerTypeEl.innerHTML = `<span class="badge ${badgeClass} fs-6 px-3 py-2">${typeLabel} Outcome</span>`;
 }
