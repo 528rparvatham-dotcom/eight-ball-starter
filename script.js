@@ -33,13 +33,6 @@ function askEightBall() {
   // Display user question
   questionOutEl.textContent = `You asked: "${userQuestion}"`;
 
-  // Get a random number from 0 to 7
-  let randomNumber = Math.floor(Math.random() * 8);
-
-  let eightBall = '';
-  let badgeClass = '';
-  let typeLabel = '';
-
   // Get response and type based on random number
   switch (randomNumber) {
     case 0:
@@ -83,6 +76,13 @@ function askEightBall() {
       badgeClass = 'bg-danger';
       break;
   }
+
+  // Get a random number from 0 to 7
+  let randomNumber = Math.floor(Math.random() * 8);
+
+  let eightBall = '';
+  let badgeClass = '';
+  let typeLabel = '';
 
   // Display the 8-Ball answer and styled Bootstrap badge
   answerEl.textContent = eightBall;
