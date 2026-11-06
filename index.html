@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Magic 8 Ball</title>
+  <title>VAR Soccer Oracle</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -15,16 +15,16 @@
   <!-- ============ NAVBAR ============ -->
   <nav class="navbar site-nav">
     <div class="container">
-      <a class="navbar-brand" href="#">Magic 8 Ball</a>
-      <span class="nav-tagline d-none d-sm-inline">Ask anything. Trust the ball.</span>
+      <a class="navbar-brand" href="#">⚽ VAR Soccer Oracle</a>
+      <span class="nav-tagline d-none d-sm-inline">Ask the pitch. Trust the decision.</span>
     </div>
   </nav>
 
   <!-- ============ HERO ============ -->
   <header class="hero text-center">
     <div class="container">
-      <h1 class="display-5">Ask the Magic 8 Ball</h1>
-      <p class="lead mb-0">Type a yes-or-no question and let the 8 Ball decide.</p>
+      <h1 class="display-5">The Penalty Shootout Oracle</h1>
+      <p class="lead mb-0">Ask your matchday question and let VAR decide your fate.</p>
     </div>
   </header>
 
@@ -32,32 +32,32 @@
 
     <!-- ============ HOW IT WORKS ============ -->
     <section class="mb-5">
-      <h2 class="section-title text-center mb-4">How It Works</h2>
+      <h2 class="section-title text-center mb-4">Matchday Rules</h2>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card step-card h-100">
-            <div class="card-body">
+            <div class="card-body text-center">
               <span class="step-number">1</span>
-              <h3 class="h5 mt-3">Enter your name</h3>
-              <p class="mb-0">Placeholder text. Explain this step for your users.</p>
+              <h3 class="h5 mt-3">Manager Name</h3>
+              <p class="mb-0">Enter your name to register your club in the tunnel.</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card step-card h-100">
-            <div class="card-body">
+            <div class="card-body text-center">
               <span class="step-number">2</span>
-              <h3 class="h5 mt-3">Ask a question</h3>
-              <p class="mb-0">Placeholder text. Explain this step for your users.</p>
+              <h3 class="h5 mt-3">Pitch Question</h3>
+              <p class="mb-0">Ask any yes-or-no match prediction before kickoff.</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card step-card h-100">
-            <div class="card-body">
+            <div class="card-body text-center">
               <span class="step-number">3</span>
-              <h3 class="h5 mt-3">Get your answer</h3>
-              <p class="mb-0">Placeholder text. Explain this step for your users.</p>
+              <h3 class="h5 mt-3">VAR Verdict</h3>
+              <p class="mb-0">Take the penalty kick to reveal the referee's final decision.</p>
             </div>
           </div>
         </div>
@@ -70,15 +70,15 @@
       <section class="col-lg-5">
         <div class="card main-card h-100">
           <div class="card-body p-4">
-            <h2 class="h4 mb-4">Your Question</h2>
+            <h2 class="h4 mb-4">🏆 Tactical Board</h2>
 
-            <label for="nameInput" class="form-label">Your name</label>
-            <input type="text" id="nameInput" class="form-control mb-3" placeholder="Maya">
+            <label for="nameInput" class="form-label">Manager Name</label>
+            <input type="text" id="nameInput" class="form-control mb-3" placeholder="e.g. Coach Pep">
 
-            <label for="questionInput" class="form-label">Your yes-or-no question</label>
-            <input type="text" id="questionInput" class="form-control mb-4" placeholder="Will I pass my test?">
+            <label for="questionInput" class="form-label">Matchday Question</label>
+            <input type="text" id="questionInput" class="form-control mb-4" placeholder="e.g. Will we win the cup final?">
 
-            <button type="button" id="askButton" onclick="askEightBall()" class="btn btn-ask w-100">Ask the 8 Ball</button>
+            <button type="button" id="askButton" onclick="askEightBall()" class="btn btn-ask w-100">Take the Kick ⚽</button>
           </div>
         </div>
       </section>
@@ -87,16 +87,16 @@
       <section id="results" class="col-lg-7">
         <div class="card main-card h-100">
           <div class="card-body p-4 text-center">
-            <p id="greeting" class="greeting">Hello!</p>
-            <p id="questionOut" class="question-out">Your question will appear here.</p>
+            <p id="greeting" class="greeting">Welcome to the stadium!</p>
+            <p id="questionOut" class="question-out">Your match question will appear here.</p>
 
-            <div class="ball">
+            <div class="ball" id="soccerBall">
               <div class="window">
-                <p id="answer" class="answer">8</p>
+                <p id="answer" class="answer">⚽</p>
               </div>
             </div>
 
-            <div id="AnswerType" class="answer-type mt-4"></div>
+            <div id="answerType" class="answer-type mt-4"></div>
           </div>
         </div>
       </section>
@@ -107,7 +107,7 @@
   <!-- ============ FOOTER ============ -->
   <footer class="site-footer py-4 text-center">
     <div class="container">
-      <p class="m-0">Created by Your Name</p>
+      <p class="m-0">Designed for Champions | VAR Soccer Oracle</p>
     </div>
   </footer>
 
