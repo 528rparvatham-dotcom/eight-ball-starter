@@ -15,23 +15,17 @@
 }
 
 body {
-font-family: 'Work Sans', sans-serif;
-background-color: var(--pitch-dark);
-background-image:
-linear-gradient(0deg, var(--grass-stripe) 50%, transparent 50%),
-radial-gradient(circle at 50% 30%, rgba(34, 197, 94, 0.15) 0%, transparent 70%);
-background-size: 100% 70px, 100% 100%;
-color: #f8fafc;
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
-h1, h2, h3, .brand-font, .section-title {
-font-family: 'Teko', sans-serif;
-text-transform: uppercase;
-letter-spacing: 1px;
+h1, h2, h3, h4, h5, .navbar-brand, .step-number, .btn-ask {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+}
+
+.display-5 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
 }
 
 .site-nav {
