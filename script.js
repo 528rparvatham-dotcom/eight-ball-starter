@@ -13,16 +13,16 @@ function askEightBall() {
   let greetingEl = document.getElementById('greeting');
   let questionOutEl = document.getElementById('questionOut');
   let answerEl = document.getElementById('answer');
-  let answerTypeEl = document.getElementById('answerType'); // Matched ID casing
+  let answerTypeEl = document.getElementById('answerType'); 
 
   // Greet the user
   if (userName === "") {
-    greetingEl.textContent = "Hello, Mystery Person!";
+    greetingEl.textContent = "Welcome to the tunnel, Manager!";
   } else {
     greetingEl.textContent = `Hello, ${userName}!`;
   }
 
-  // Check if a question was entered
+ 
   if (userQuestion === "") {
     questionOutEl.textContent = "";
     answerEl.textContent = "?";
