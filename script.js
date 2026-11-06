@@ -35,11 +35,52 @@ return
 }
 
 //get a random number
-
+let randomNumber = Math.floor(Math.random() * 8);
 //Get the Magic 8balls answer
+switch (randomNumber) {
+    case 0:
+      eightBall = 'It is certain';
+      answerType = 'positive';
+      break;
+    case 1:
+      eightBall = 'It is decidedly so';
+      answerType = 'positive';
+      break;
+    case 2:
+      eightBall = 'Reply hazy try again';
+      answerType = 'neutral';
+      break;
+    case 3:
+      eightBall = 'Cannot predict now';
+      answerType = 'neutral';
+      break;
+    case 4:
+      eightBall = 'Do not count on it';
+      answerType = 'negative';
+      break;
+    case 5:
+      eightBall = 'My sources say no';
+      answerType = 'negative';
+      break;
+    case 6:
+      eightBall = 'Outlook good';
+      answerType = 'positive';
+      break;
+    case 7:
+      eightBall = 'Signs point to yes';
+      answerType = 'positive';
+      break;
+  }
 
+  // Display the 8-ball answer
+  document.getElementById('answer').textContent = eightBall;
+
+  // Show the 8-ball answer type badge
+  document.getElementById('AnswerType').textContent = `Type: ${answerType}`;
+}
 //Show the 8ball answer type badge
-
+let eightBall = '';
+  let answerType = '';
 
 
 
