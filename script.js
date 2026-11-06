@@ -12,7 +12,7 @@ function askEightBall() {
   console.log(userName, userQuestion);
 
 // Show the Question on site
-document.getElementById('QuestionOut').textContent = "You asked: " + userQuestion;
+document.getElementById('questionOut').textContent = "You asked: " + userQuestion;
 
 //Greet the user!
 let greeting
@@ -20,7 +20,7 @@ let greeting
 if(userName === ""){
   greeting = "Hello Mystery Person!"
 } else {
-  greeting = `Hello, $(userName)!`
+  greeting = `Hello, ${userName}!`
 }
 
 document.getElementById('greeting').textContent = greeting
@@ -30,7 +30,7 @@ document.getElementById('greeting').textContent = greeting
 if (userQuestion === "") {
   document.getElementById('questionOut').textContent = ''
 document.getElementById('answer').textContent ='The 8 ball needs a question!'
-document.getElementById('AnswerType'.innerHTML) = ''
+document.getElementById('AnswerType').innerHTML = ''
 return
 }
 
