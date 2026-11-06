@@ -1,170 +1,277 @@
-/* ==========================================
-   Magic 8 Ball: starter styles
-   Change these colors and fonts to match your theme.
-   ========================================== */
-
 :root {
-  --brand: #3b2a6b;        /* navbar, hero, button */
-  --brand-light: #ece8f6;  /* page background */
-  --accent: #f4b942;       /* step numbers, highlights */
-  --text: #1f1d2b;
-  --font: "Poppins", Arial, sans-serif;
+--pitch-dark: #062c19;
+--pitch-medium: #0c4a2a;
+--pitch-light: #15803d;
+--grass-stripe: #093820;
+--accent-yellow: #facc15;
+--accent-yellow-hover: #fef08a;
+--accent-green: #22c55e;
+--accent-red: #ef4444;
+--accent-blue: #38bdf8;
+--card-bg: rgba(12, 74, 42, 0.85);
+--border-color: rgba(34, 197, 94, 0.3);
+--soccer-black: #0f172a;
+--soccer-white: #ffffff;
 }
 
 body {
-  font-family: var(--font);
-  background: var(--brand-light);
-  color: var(--text);
+font-family: 'Work Sans', sans-serif;
+background-color: var(--pitch-dark);
+background-image:
+linear-gradient(0deg, var(--grass-stripe) 50%, transparent 50%),
+radial-gradient(circle at 50% 30%, rgba(34, 197, 94, 0.15) 0%, transparent 70%);
+background-size: 100% 70px, 100% 100%;
+color: #f8fafc;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+margin: 0;
 }
 
-/* ---------- Navbar ---------- */
+h1, h2, h3, .brand-font, .section-title {
+font-family: 'Teko', sans-serif;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
 .site-nav {
-  background: var(--brand);
+background-color: rgba(6, 44, 25, 0.95);
+border-bottom: 2px solid var(--accent-green);
+backdrop-filter: blur(8px);
+padding: 0.8rem 1rem;
 }
 
-.site-nav .navbar-brand {
-  color: #fff;
-  font-weight: 700;
+.navbar-brand {
+font-family: 'Teko', sans-serif;
+font-size: 2.2rem;
+font-weight: 700;
+color: #ffffff !important;
+letter-spacing: 1px;
+}
+
+.navbar-brand i {
+color: var(--accent-yellow);
 }
 
 .nav-tagline {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 0.9rem;
+color: #94a3b8;
+font-size: 0.95rem;
 }
 
-/* ---------- Hero ---------- */
 .hero {
-  background: var(--brand);
-  color: #fff;
-  padding: 3rem 0 4rem;
+background: linear-gradient(180deg, rgba(6, 44, 25, 0.9) 0%, rgba(12, 74, 42, 0.75) 100%),
+url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1200&q=80') center/cover;
+padding: 3rem 1rem;
+border-bottom: 1px solid var(--border-color);
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
-.hero h1 {
-  font-weight: 700;
+.hero-title {
+font-size: 3.5rem;
+color: var(--accent-yellow);
+text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8);
+margin-bottom: 0.25rem;
 }
 
-/* ---------- How It Works ---------- */
-.section-title {
-  font-weight: 600;
+.main-card, .step-card {
+background: var(--card-bg);
+border: 1px solid var(--border-color);
+border-radius: 16px;
+backdrop-filter: blur(10px);
+box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+color: #ffffff;
+transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.step-card {
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+.step-card:hover {
+transform: translateY(-4px);
+border-color: var(--accent-yellow);
+box-shadow: 0 12px 24px rgba(250, 204, 21, 0.2);
 }
 
 .step-number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: var(--text);
-  font-weight: 700;
-}
-
-/* ---------- Main cards ---------- */
-.main-card {
-  border: none;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 44px;
+height: 44px;
+background: var(--accent-yellow);
+color: var(--pitch-dark);
+border-radius: 50%;
+font-family: 'Teko', sans-serif;
+font-size: 1.75rem;
+font-weight: 700;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .form-label {
-  font-weight: 600;
+font-weight: 600;
+color: #cbd5e1;
+margin-bottom: 0.5rem;
 }
 
-.btn-ask {
-  background: var(--brand);
-  color: #fff;
-  font-weight: 600;
-  padding: 0.75rem;
-  border-radius: 10px;
+.form-control {
+background-color: rgba(6, 44, 25, 0.7);
+border: 1px solid var(--border-color);
+color: #ffffff;
+padding: 0.75rem 1rem;
+border-radius: 10px;
+font-size: 1rem;
+transition: all 0.2s ease;
 }
 
-.btn-ask:hover,
-.btn-ask:focus-visible {
-  background: var(--accent);
-  color: var(--text);
+.form-control:focus {
+background-color: rgba(6, 44, 25, 0.95);
+color: #ffffff;
+border-color: var(--accent-yellow);
+box-shadow: 0 0 0 0.25rem rgba(250, 204, 21, 0.25);
 }
 
-.btn-ask:active,
-.btn-ask:focus {
-  background: var(--brand);
-  color: #fff;
+.form-control::placeholder {
+color: #64748b;
 }
 
-/* ---------- Results ---------- */
-.greeting {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 0.25rem;
+.btn-kick {
+background: linear-gradient(135deg, var(--accent-yellow) 0%, #eab308 100%);
+color: var(--pitch-dark);
+font-family: 'Teko', sans-serif;
+font-size: 1.85rem;
+font-weight: 700;
+letter-spacing: 1px;
+padding: 0.65rem 1rem;
+border-radius: 12px;
+border: none;
+box-shadow: 0 4px 15px rgba(234, 179, 8, 0.4);
+transition: all 0.2s ease;
+cursor: pointer;
 }
 
-.question-out {
-  min-height: 1.5rem;
-  color: #555;
+.btn-kick:hover {
+background: linear-gradient(135deg, var(--accent-yellow-hover) 0%, var(--accent-yellow) 100%);
+color: var(--pitch-dark);
+transform: translateY(-2px);
+box-shadow: 0 6px 20px rgba(234, 179, 8, 0.6);
+}
+
+.btn-kick:active {
+transform: translateY(1px);
+box-shadow: 0 2px 8px rgba(234, 179, 8, 0.4);
+}
+
+.ball-container {
+perspective: 800px;
+padding: 15px 0;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .ball {
-  width: 240px;
-  height: 240px;
-  margin: 1.5rem auto 0;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #4a4a4a, #111 65%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+width: 220px;
+height: 220px;
+background-color: var(--soccer-white);
+background-image:
+radial-gradient(circle at 50% 50%, var(--soccer-black) 24%, transparent 25%),
+radial-gradient(circle at 18% 22%, var(--soccer-black) 14%, transparent 15%),
+radial-gradient(circle at 82% 22%, var(--soccer-black) 14%, transparent 15%),
+radial-gradient(circle at 18% 78%, var(--soccer-black) 14%, transparent 15%),
+radial-gradient(circle at 82% 78%, var(--soccer-black) 14%, transparent 15%);
+border-radius: 50%;
+margin: 0 auto;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 4px solid #020617;
+box-shadow: inset -15px -15px 30px rgba(0, 0, 0, 0.6), 0 15px 35px rgba(0, 0, 0, 0.7);
+position: relative;
+transition: transform 0.3s ease;
+}
+
+.ball.kick-animate {
+animation: ballKick 0.8s ease-in-out;
+}
+
+@keyframes ballKick {
+0% { transform: scale(1) rotate(0deg); }
+20% { transform: scale(0.88) rotate(-28deg) translateY(-12px); }
+40% { transform: scale(1.12) rotate(28deg) translateY(12px); }
+60% { transform: scale(0.94) rotate(-16deg); }
+80% { transform: scale(1.04) rotate(10deg); }
+100% { transform: scale(1) rotate(0deg); }
 }
 
 .window {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  background: #1b2a6b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px;
+width: 120px;
+height: 120px;
+background: radial-gradient(circle at 50% 50%, #0f172a, #020617);
+border: 3px solid var(--accent-yellow);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 12px;
+text-align: center;
+box-shadow: 0 0 15px rgba(250, 204, 21, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.9);
+z-index: 2;
 }
 
-.answer {
-  margin: 0;
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.95rem;
-  line-height: 1.25;
+.answer-text {
+color: var(--accent-blue);
+font-weight: 700;
+font-size: 0.95rem;
+line-height: 1.25;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+margin: 0;
+transition: opacity 0.3s ease;
 }
 
-/* ---------- Answer type badges ----------
-   Your innerHTML can use these classes. */
-.answer-type span {
-  display: inline-block;
-  padding: 0.4rem 1.25rem;
-  border-radius: 999px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #fff;
+.greeting-text {
+font-size: 1.5rem;
+color: var(--accent-yellow);
+font-weight: 700;
+margin-bottom: 0.25rem;
 }
 
-.yes {
-  background: #2e7d32;
+.question-text {
+font-style: italic;
+color: #94a3b8;
+min-height: 24px;
 }
 
-.maybe {
-  background: #b26a00;
+.history-item {
+background: rgba(6, 44, 25, 0.6);
+border: 1px solid var(--border-color);
+border-radius: 8px;
+padding: 8px 12px;
+font-size: 0.85rem;
+margin-bottom: 6px;
+color: #e2e8f0;
 }
 
-.no {
-  background: #c62828;
-}
-
-/* ---------- Footer ---------- */
 .site-footer {
-  background: var(--brand);
-  color: rgba(255, 255, 255, 0.8);
+background-color: rgba(6, 44, 25, 0.95);
+border-top: 1px solid var(--border-color);
+margin-top: auto;
+color: #64748b;
 }
+
+@media (max-width: 576px) {
+.hero-title {
+font-size: 2.6rem;
+}
+
+.ball {
+width: 180px;
+height: 180px;
+}
+
+.window {
+width: 100px;
+height: 100px;
+}
+
+.answer-text {
+font-size: 0.85rem;
+}
+
