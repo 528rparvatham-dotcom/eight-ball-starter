@@ -50,37 +50,37 @@ function askEightBall() {
       badgeClass = 'bg-success';
       break;
     case 1:
-      eightBall = 'It is decidedly so-Win!';
+      eightBall = 'It is decidedly so';
       typeLabel = 'Positive';
       badgeClass = 'bg-success';
       break;
     case 2:
-      eightBall = 'Signs point to yes-Clean sheet';
+      eightBall = 'Signs point to yes';
       typeLabel = 'Positive';
       badgeClass = 'bg-success';
       break;
     case 3:
-      eightBall = 'Reply hazy, try again-VAR Review';
+      eightBall = 'Reply hazy, try again';
       typeLabel = 'Neutral';
       badgeClass = 'bg-secondary';
       break;
     case 4:
-      eightBall = 'Ask again later-Extra Time';
+      eightBall = 'Ask again later';
       typeLabel = 'Neutral';
       badgeClass = 'bg-secondary';
       break;
     case 5:
-      eightBall = 'Better not tell you now-Offside';
+      eightBall = 'Better not tell you now';
       typeLabel = 'Neutral';
       badgeClass = 'bg-secondary';
       break;
     case 6:
-      eightBall = "Don't count on it-Red Card!";
+      eightBall = "Don't count on it";
       typeLabel = 'Negative';
       badgeClass = 'bg-danger';
       break;
     case 7:
-      eightBall = 'My sources say no-Penalty Miss!';
+      eightBall = 'My sources say no';
       typeLabel = 'Negative';
       badgeClass = 'bg-danger';
       break;
