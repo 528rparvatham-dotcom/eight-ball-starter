@@ -53,18 +53,28 @@ font-size: 0.95rem;
 }
 
 .hero {
-background: linear-gradient(180deg, rgba(6, 44, 25, 0.9) 0%, rgba(12, 74, 42, 0.75) 100%),
-url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1200&q=80') center/cover;
-padding: 3rem 1rem;
-border-bottom: 1px solid var(--border-color);
-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, #064e3b 0%, #022c22 100%);
+  border-bottom: 4px solid #10b981;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-.hero-title {
-font-size: 3.5rem;
-color: var(--accent-yellow);
-text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8);
-margin-bottom: 0.25rem;
+.psychic-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ffffff;
+  
+  text-shadow: 
+    0 0 10px rgba(16, 185, 129, 0.6),
+    0 0 20px rgba(16, 185, 129, 0.4),
+    2px 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero .lead {
+  color: #a7f3d0;
+  font-size: 1.15rem;
+  font-weight: 500;
 }
 
 .main-card, .step-card {
