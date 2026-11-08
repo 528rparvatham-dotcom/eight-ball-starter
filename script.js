@@ -33,58 +33,61 @@ function askEightBall() {
   // Display user question
   questionOutEl.textContent = `You asked: "${userQuestion}"`;
 
-  // Get response and type based on random number
-  switch (randomNumber) {
-    case 0:
-      eightBall = 'It is certain';
-      typeLabel = 'Positive';
-      badgeClass = 'bg-success';
-      break;
-    case 1:
-      eightBall = 'It is decidedly so';
-      typeLabel = 'Positive';
-      badgeClass = 'bg-success';
-      break;
-    case 2:
-      eightBall = 'Signs point to yes';
-      typeLabel = 'Positive';
-      badgeClass = 'bg-success';
-      break;
-    case 3:
-      eightBall = 'Reply hazy, try again';
-      typeLabel = 'Neutral';
-      badgeClass = 'bg-secondary';
-      break;
-    case 4:
-      eightBall = 'Ask again later';
-      typeLabel = 'Neutral';
-      badgeClass = 'bg-secondary';
-      break;
-    case 5:
-      eightBall = 'Better not tell you now';
-      typeLabel = 'Neutral';
-      badgeClass = 'bg-secondary';
-      break;
-    case 6:
-      eightBall = 'Don\'t count on it';
-      typeLabel = 'Negative';
-      badgeClass = 'bg-danger';
-      break;
-    case 7:
-      eightBall = 'My sources say no';
-      typeLabel = 'Negative';
-      badgeClass = 'bg-danger';
-      break;
-  }
+  // Generate a random number from 0 to 7
 
-  // Get a random number from 0 to 7
   let randomNumber = Math.floor(Math.random() * 8);
 
   let eightBall = '';
   let badgeClass = '';
   let typeLabel = '';
 
+
+  // Get response and type based on random number
+  switch (randomNumber) {
+    case 0:
+      eightBall = 'It is a certain win';
+      typeLabel = 'Positive';
+      badgeClass = 'bg-success';
+      break;
+    case 1:
+      eightBall = 'It is decidedly so-Win!';
+      typeLabel = 'Positive';
+      badgeClass = 'bg-success';
+      break;
+    case 2:
+      eightBall = 'Signs point to yes-Clean sheet';
+      typeLabel = 'Positive';
+      badgeClass = 'bg-success';
+      break;
+    case 3:
+      eightBall = 'Reply hazy, try again-VAR Review';
+      typeLabel = 'Neutral';
+      badgeClass = 'bg-secondary';
+      break;
+    case 4:
+      eightBall = 'Ask again later-Extra Time';
+      typeLabel = 'Neutral';
+      badgeClass = 'bg-secondary';
+      break;
+    case 5:
+      eightBall = 'Better not tell you now-Offside';
+      typeLabel = 'Neutral';
+      badgeClass = 'bg-secondary';
+      break;
+    case 6:
+      eightBall = "Don't count on it-Red Card!";
+      typeLabel = 'Negative';
+      badgeClass = 'bg-danger';
+      break;
+    case 7:
+      eightBall = 'My sources say no-Penalty Miss!';
+      typeLabel = 'Negative';
+      badgeClass = 'bg-danger';
+      break;
+  }
+
+  
   // Display the 8-Ball answer and styled Bootstrap badge
-  answerEl.textContent = eightBall;
-  answerTypeEl.innerHTML = `<span class="badge ${badgeClass} fs-6 px-3 py-2">${typeLabel} Outcome</span>`;
+  document.getElementById('answer').textContent = eightBall
+  document.getElementById('answerType').textContent = typeLabel;
 }
