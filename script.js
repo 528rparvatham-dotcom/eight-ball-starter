@@ -9,69 +9,73 @@ function askEightBall() {
   let userName = document.getElementById('nameInput').value.trim();
   let userQuestion = document.getElementById('questionInput').value.trim();
 
-  // Elements
-  let greetingEl = document.getElementById('greeting');
-  let questionOutEl = document.getElementById('questionOut');
-  let answerEl = document.getElementById('answer');
-  let answerTypeEl = document.getElementById('answerType'); 
+  //question check
+  if(userQuestion ==="") {
+    document.getElementById("questionOut") .textContent = "";
+    document.getElementById("answerType") .innerHTML = "";
+    document.getElementById("answer") .textContent = "The Soccer Psychic needs a question";
+    return
+  }
+
+  //show question
+  document.getElementById("questionOut") .textContent = "You asked:" + userQuestion;
 
   // Greet the user
   if (userName === "") {
-    greetingEl.textContent = "Welcome to the tunnel, Manager!";
+    document.getElementById("greeting").textContent = "Hello Gaffer!";
   } else {
-    greetingEl.textContent = `Hello, ${userName}!`;
+    document.getElementById("greeting").textContent = `Hello, Manager ${userName}`;
   }
 
- 
-  if (userQuestion === "") {
-    questionOutEl.textContent = "";
-    answerEl.textContent = "?";
-    answerTypeEl.innerHTML = '<span class="badge bg-warning text-dark">Please enter a question!</span>';
-    return;
-  }
 
-  // Display user question
-  questionOutEl.textContent = `You asked: "${userQuestion}"`;
 
-  // Generate a random number from 0 to 7
+  // Random number 0-9
+  let randomNumber = Math.floor(Math.random() * 10);
 
-  let randomNumber = Math.floor(Math.random() * 8);
-
+//Answer
   let eightBall = '';
-  let badgeClass = '';
-  let typeLabel = '';
-
 
   // Get response and type based on random number
   switch (randomNumber) {
     case 0:
-      eightBall = 'It is a certain win';
+      eightBall = 'It is a certain - GOAL!';
       break;
     case 1:
-      eightBall = 'It is decidedly so';
+      eightBall = 'It is decidedly so - WIN!';
       break;
     case 2:
-      eightBall = 'Signs point to yes';
+      eightBall = 'Without a doubt - 3 Points!';
       break;
     case 3:
-      eightBall = 'Reply hazy, try again';
+      eightBall = 'Signs point to yes - Clean Sheet!';
       break;
     case 4:
-      eightBall = 'Ask again later';
+      eightBall = 'Reply hazy, try again - VAR Review';
       break;
     case 5:
-      eightBall = 'Better not tell you now';
+      eightBall = 'Cannot predict now - Offside';
       break;
     case 6:
-      eightBall = "Don't count on it";
+      eightBall = "Ask again later - Extra Time";
       break;
     case 7:
-      eightBall = 'My sources say no';
+      eightBall = "Don't count on it - Red Card!";
       break;
+    case 8:
+      eightBall = 'My sources say no - Penalty Miss!'
+      break;
+    case 9:
+      eightBall = 'Very doubtful - Saved by Keeper!'
   }
 
-  
-  // Display the 8-Ball answer and styled Bootstrap badge
-  document.getElementById('answer').textContent = eightBall
-  document.getElementById('answerType').textContent = typeLabel;
+  document.getElementById("answer").textContent = eightBall
+
+  //answer type
+  if(randomNumber <= 3) {
+    document.getElementById("answerType").innerHTML = '<span class="yes">YES-WIN</span>';
+  } else if (randomNumber <= 6) {
+    document.getElementById("answerType") .innerHTML = '<span class="maybe"> MAYBE-VAR</span>'
+  }else {
+    document.getElementById("answerType").innerHTML = '<span class="no">NO-LOSS</span>';
+  }
 }
